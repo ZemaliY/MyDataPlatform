@@ -6,11 +6,9 @@ import json
 
 app = FastAPI()
 
-
 class Category(Enum):
     TOOLS = 'tools'
     CONSUMABLES = 'consumables'
-
 
 class Item(BaseModel):
     name: str
@@ -26,7 +24,6 @@ class InitMessage(BaseModel):
     ts_vac: str
     is_update: bool = Field(default=False)
     other_field: str
-
 
 json_data = '''
 [
