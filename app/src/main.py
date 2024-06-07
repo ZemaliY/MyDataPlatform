@@ -111,6 +111,7 @@ def load_files_run(init_messag: InitMessage) :
         schema=schema,
         source_format=bigquery.SourceFormat.NEWLINE_DELIMITED_JSON
     )
+
     records = json.loads(json_data)
     load_job = bigquery_client.load_table_from_json(
         json_rows= records,
