@@ -100,7 +100,9 @@ def add_item(item: Item) -> dict[str, Item]:
 @app.post("/v1/checkFiles")
 def load_files_run(init_messag: InitMessage) :
     is_update=init_messag.is_update
+
     bigquery_client = bigquery.Client(project='sbx-mydataplatform')
+
     schema = bigquery_client.schema_from_json("src/schema.json")
 
     destination = 'sbx-mydataplatform.test.table_item'
